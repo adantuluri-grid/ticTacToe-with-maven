@@ -12,7 +12,7 @@ public class App {
             if (input.equals("exit")) break;
 
             String[] parts = input.split("\\s+");
-            if (parts.length != 3 || !parts[0].equals("start") || !isValid(parts[1]) || !isValid(parts[2])) {
+            if (parts.length != 3 || !parts[0].equals("start") || isValid(parts[1]) || isValid(parts[2])) {
                 System.out.println("Bad parameters!");
                 continue;
             }
@@ -22,7 +22,7 @@ public class App {
     }
 
     public static boolean isValid(String s) {
-        return s.equals("user") || s.equals("easy") || s.equals("medium") || s.equals("hard");
+        return !s.equals("user") && !s.equals("easy") && !s.equals("medium") && !s.equals("hard");
     }
 
     public static void playGame(String p1, String p2) {
@@ -42,9 +42,17 @@ public class App {
                 userMove(board, currentSymbol);
             } else {
                 System.out.println("Making move level \"" + type + "\"");
-                if (type.equals("easy")) easyMove(board, currentSymbol);
-                else if (type.equals("medium")) mediumMove(board, currentSymbol);
-                else if (type.equals("hard")) hardMove(board, currentSymbol);
+                switch (type) {
+                    case "easy":
+                        easyMove(board, currentSymbol);
+                        break;
+                    case "medium":
+                        mediumMove(board, currentSymbol);
+                        break;
+                    case "hard":
+                        hardMove(board, currentSymbol);
+                        break;
+                }
             }
 
             printBoard(board);
