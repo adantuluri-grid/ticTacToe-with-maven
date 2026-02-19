@@ -55,6 +55,8 @@ public class App {
                 }
             }
 
+
+
             printBoard(board);
             String status = checkStatus(board);
             if (!status.equals("Game not finished")) {
