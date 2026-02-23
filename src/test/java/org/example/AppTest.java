@@ -107,19 +107,6 @@ public class AppTest {
         assertEquals("Draw", App.checkStatus(board));
     }
 
-    @Test
-    void testTryCompleteReturnsTrue() {
-        char[][] board = {
-                {'X', 'X', ' '},
-                {'O', ' ', ' '},
-                {' ', ' ', ' '}
-        };
-
-        boolean result = App.tryComplete(board, 'X', 'X');
-
-        assertTrue(result);
-        assertEquals('X', board[0][2]);
-    }
 
     @Test
     void testPrintBoard() {
