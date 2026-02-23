@@ -34,7 +34,7 @@ public class AppTest {
 
         App.mediumMove(board, 'X');
 
-        assertEquals('X', board[0][2]); // Should complete row
+        assertEquals('X', board[0][2]);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class AppTest {
 
         App.mediumMove(board, 'X');
 
-        assertEquals('X', board[0][2]); // Should block opponent
+        assertEquals('X', board[0][2]);
     }
 
     @Test
@@ -60,7 +60,7 @@ public class AppTest {
 
         App.hardMove(board, 'X');
 
-        assertEquals('X', board[0][2]); // Best move to win
+        assertEquals('X', board[0][2]);
     }
 
     @Test
